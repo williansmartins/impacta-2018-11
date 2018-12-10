@@ -10,6 +10,5 @@
 - Victor M.
 
 ## links para servidor em produção
-[projeto-web-comum] (http://pwms.com.br/projeto-web-comum/)
-
-[projeto-web-maven] (http://pwms.com.br/projeto-web-maven/)
+[projeto-web-comum](http://pwms.com.br/projeto-web-comum/)
+[projeto-web-maven](http://pwms.com.br/projeto-web-maven/)

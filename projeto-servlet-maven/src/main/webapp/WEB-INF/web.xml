@@ -7,7 +7,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>servlet1</servlet-name>
-    <url-pattern>/hello</url-pattern>
+    <url-pattern>/cadastrar</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>meuFiltro</filter-name>

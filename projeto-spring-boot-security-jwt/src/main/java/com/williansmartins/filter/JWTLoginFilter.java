@@ -1,4 +1,4 @@
-package com.jwtme.filter;
+package com.williansmartins.filter;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jwtme.security.TokenAuthenticationService;
+import com.williansmartins.security.TokenAuthenticationService;
 
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 

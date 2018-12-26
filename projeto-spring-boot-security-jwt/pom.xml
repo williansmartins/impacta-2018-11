@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.jwtme</groupId>
-	<artifactId>jwtme</artifactId>
+	<groupId>com.williansmartins</groupId>
+	<artifactId>projeto-spring-boot-security-jwt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>jwtme</name>
+	<name>projeto-spring-boot-security-jwt</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

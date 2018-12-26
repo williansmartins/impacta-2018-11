@@ -1,4 +1,4 @@
-package com.jwtme.security;
+package com.williansmartins.security;
 
 import java.util.Collections;
 import java.util.Date;

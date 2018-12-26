@@ -1,4 +1,4 @@
-package com.jwtme.filter;
+package com.williansmartins.filter;
 
 public class AccountCredentials {
 	

@@ -2,7 +2,7 @@ package br.com.impacta.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {  
+public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {  
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
@@ -11,7 +11,7 @@ public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatc
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/rest/*" };
+		return new String[] { "/api/v1/*" };
 	}
 
 	@Override

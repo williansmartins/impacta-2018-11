@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class Controller {
 	
 	@RequestMapping(value = { "/", "/public**" }, method = RequestMethod.GET)
 	public String welcomePage() {

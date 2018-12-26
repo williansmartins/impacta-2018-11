@@ -5,9 +5,17 @@
     <servlet-name>servlet1</servlet-name>
     <servlet-class>br.com.impacta.Servlet1</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>servlet2</servlet-name>
+    <servlet-class>br.com.impacta.Servlet2</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>servlet1</servlet-name>
-    <url-pattern>/hello</url-pattern>
+    <url-pattern>/cadastrar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet2</servlet-name>
+    <url-pattern>/buscar</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>meuFiltro</filter-name>

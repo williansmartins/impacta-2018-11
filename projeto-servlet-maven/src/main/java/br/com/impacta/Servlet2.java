@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 @SuppressWarnings("serial")
-public class Servlet1 extends HttpServlet {
+public class Servlet2 extends HttpServlet {
 
 	private String message;
 
@@ -36,7 +36,7 @@ public class Servlet1 extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
 		
-		System.out.println("POST");
+		System.out.println("POST BUSCAR");
 		
 		Gson gson = new Gson();
 		 

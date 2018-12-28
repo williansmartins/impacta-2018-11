@@ -3,9 +3,6 @@ package com.jwtme.security;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Map;
-import java.util.Set;
-import java.util.Map.Entry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,10 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.jwtme.model.User;
+import com.jwtme.service.UserService;
 
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -29,7 +25,7 @@ public class TokenAuthenticationService {
 	static final String TOKEN_PREFIX = "Bearer";
 	static final String HEADER_STRING = "Authorization";
 	
-	static void addAuthentication(HttpServletResponse response, Authentication auth) {
+	static void addAuthentication(HttpServletResponse response, Authentication auth, UserService userService) {
 		Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
 		String tipo = "";
 		for (GrantedAuthority grantedAuthority : authorities) {
@@ -38,9 +34,13 @@ public class TokenAuthenticationService {
 			}
 		}
 		
+		String name = auth.getName();
+		User user = userService.findUserByEmail(name);
+		
 		String JWT = Jwts.builder()
-				.setSubject(auth.getName())
+				.setSubject(name)
 				.claim("tipo", tipo)
+				.claim("id", user.getId())
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET)
 				.compact();
@@ -72,8 +72,6 @@ public class TokenAuthenticationService {
 	
 	static Authentication getAdminAuthentication(HttpServletRequest request) {
 		String token = request.getHeader(HEADER_STRING);
-		
-		SecurityContext context = SecurityContextHolder.getContext();
 		
 		if (token != null && !"".equals(token)) {
 			try {

@@ -14,11 +14,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+import com.jwtme.service.UserService;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	 @Autowired
+	@Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
@@ -30,6 +32,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${spring.queries.roles-query}")
     private String rolesQuery;
     
+    @Autowired
+    private UserService userService;
+    
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf().disable().authorizeRequests()
@@ -39,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			
 			// filtra requisições de login
-			.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+			.addFilterBefore(new JWTLoginFilter("/login", authenticationManager(), userService),
 	                UsernamePasswordAuthenticationFilter.class)
 			
 			//filtro para autorizacao

@@ -31,6 +31,7 @@ public class TokenAuthenticationService {
 		for (GrantedAuthority grantedAuthority : authorities) {
 			if("ADMIN".equals(grantedAuthority.getAuthority())) {
 				tipo = "admin";
+				break;
 			}
 		}
 		

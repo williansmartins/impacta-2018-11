@@ -1,0 +1,91 @@
+ <div id="filhos" class="container-fluid">
+ 	<h3 class="center">Meus kidz
+	 	<a href="javascript:void(0)" data-toggle="modal" data-target="#modalEditar">
+			<i class="fas fa-plus"></i>
+		</a>
+ 	</h3>
+ 	<ul class="itens">
+ 		<li class="item" ng-repeat="filho in filhos">
+ 			<span class="chave nome">nome: <span class="valor">{{filho.nome}}</span></span>
+ 			<span class="chave idade">idade: <span class="valor">{{filho.idade}}</span></span>
+ 			<span class="chave nascimento">nascimento: <span class="valor">{{filho.nascimento}}</span></span>
+ 			<span class="chave sexo">sexo: <span class="valor">{{filho.sexo}}</span></span>
+ 		</li>
+ 	</ul>
+ 	
+
+ 	<div class="modais">
+		<div id="modalEditar" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Detalhes dos meus kidz</h4>
+                    </div>
+                    <div class="modal-body"> 
+                        <section class="edicao row">
+							<div class="tab-content" id="pills-tabContent" ng-init="aba='aba1'">
+								<form name="formEditar">
+									<section class="" ng-show="aba == 'aba1'">
+										<div class="form-group col-md-4">
+											<label for="">Nome (*):</label>
+											<input type="text" class="form-control" id="nome" ng-required="true" ng-model="entidadeSelecionada.nome">
+										</div>
+										<div class="form-group col-md-3 calendario">
+											<label for="">Nascimento (*):</label>
+											<p class="input-group">
+									          <input type="text" class="form-control" 
+									            name = "calendario-nascimento"
+									          	uib-datepicker-popup="{{format}}" 
+									          	ng-model="entidadeSelecionada.nascimento" 
+									          	is-open="popup1.opened" 
+									          	datepicker-options="dateOptions" 
+									          	ng-required="true" 
+									          	close-text="Close" 
+									          	alt-input-formats="altInputFormats" />
+									          <span class="input-group-btn">
+									            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+									          </span>
+									        </p>
+										</div>
+										<div class="form-group col-md-3">
+											<label for="sexo">Sexo:</label>
+											<p class="input-group sexo">
+												<label>
+													<input class="custom-control-input" type="radio" 
+														name="sexo" 
+														ng-model="entidadeSelecionada.sexo"
+														value="m" 
+														required
+														ng-checked="entidadeSelecionada.sexo == 'm' ">Masculino</input>
+												</label>
+												<label>
+													<input class="custom-control-input" type="radio" 
+														name="sexo" 
+														ng-model="entidadeSelecionada.sexo"
+														value="f" 
+														required
+														ng-checked="entidadeSelecionada.sexo == 'f' ">Feminino</input>
+												</label>
+											</p>
+										</div>
+									</section>
+								</form>
+							</div>
+                        </section>
+                    </div>
+                    <div class="modal-footer">
+						<a href="javascript:void(0)" 
+							class="btn btn-primary" 
+							ng-click="salvar()" 
+							ng-disabled="(formEditar.$invalid)" data-dismiss="modal">Salvar</a>
+						&nbsp;
+						<a href="javascript:void(0)" class="btn btn-default cancelar" ng-click="cancelar()" data-dismiss="modal">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+ 	</div>
+ </div> 

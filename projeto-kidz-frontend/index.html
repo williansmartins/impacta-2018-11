@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Index</title>
+        <!-- NO CACHE -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="shortcut icon" href="imagens/logo.png" type="image/png">
+		<link rel="icon" href="imagens/logo.png" type="image/png">
+        
+        <!-- CSS VENDOR -->
+        <link rel="stylesheet" href="css/vendor/bootstrap/bootstrap.css" >
+        <link rel="stylesheet" href="css/vendor/normalize/normalize.css" >
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+ 
+        <!-- CSS MINE -->
+        <link href="css/global.css" rel="stylesheet">
+        <link href="css/fonts.css" rel="stylesheet">
+        <link href="css/modal-mensagem.css" rel="stylesheet">
+        <link href="css/tela-index.css" rel="stylesheet">
+        <link href="css/tela-home.css" rel="stylesheet">
+        <link href="css/tela-login.css" rel="stylesheet">
+        <link href="css/tela-filhos.css" rel="stylesheet">
+        
+        <!-- JS VENDOR -->
+        <script src="javascript/vendor/jquery/jquery.min.js"></script>
+        <script src="javascript/vendor/bootstrap/bootstrap.min.js"></script>
+        
+        <script src="javascript/vendor/angular/angular-1.5.8.js"></script>
+        <script src="javascript/vendor/angular/angular-sanitize.js"></script>
+        <script src="javascript/vendor/angular/ui-bootstrap-tpls-2.2.0.js"></script>
+        <script src="javascript/vendor/angular/angular-route.js"></script>
+        <script src="javascript/vendor/angular-base64/angular-base64.js"></script>
+        <script src="javascript/vendor/ng-storage/ngStorage.js"></script>
+        <script src="javascript/vendor/angular-logger/angular-logger.min.js"></script>
+		
+        <script src="javascript/vendor/angular-input-masks/angular-input-masks-standalone.min.js"></script> 
+        <script src="javascript/vendor/angular-input-masks/angular-locale_pt-br.js"></script>
+
+
+        <!-- JS MINE -->
+        <script src="javascript/app.js"></script>
+        <script src="javascript/routes.js"></script>
+        <script src="javascript/config.js"></script>
+
+        <!-- MODULES -->
+        <script src="javascript/servicos/filho-service.js"></script>
+        <script src="javascript/servicos/login-service.js"></script>
+        <script src="javascript/servicos/log/log-service.js"></script> 
+        <script src="javascript/servicos/session/session-service.js"></script>
+
+        <script src="javascript/controllers/login-controller.js"></script>
+        <script src="javascript/controllers/grafico-controller.js"></script>
+        <script src="javascript/controllers/home-controller.js"></script>
+        <script src="javascript/controllers/filhos-controller.js"></script>
+        <script src="javascript/controllers/navegador-controller.js"></script>
+        
+        <script src="javascript/diretivas/global-directive.js"></script>
+        <script src="javascript/utils/functions-utils.js"></script>
+        <script src="javascript/filtros/contas-filter.js"></script>
+
+        <!-- MODAIS -->
+        <script src="javascript/componentes/component-modal.js"></script>
+        <script src="javascript/controllers/global/modal-default-controller.js"></script>
+    </head>
+    <body ng-app="principal" id="index">
+        <nav class="navbar navbar-inverse" ng-controller="NavegadorController">
+            <h2 ng-click="voltarParaHome()">Kidz</h2>
+        </nav>   
+        <div class="base">
+            <div class="loading-wrapper" loading>
+                <div class="loading"></div>
+                <div class="overlay2"></div>
+            </div>    
+            <div ng-view class="view"></div>
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="rodape center">
+                    <span class="center" ng-controller="NavegadorController">
+                        <nav ng-if="flagMostrarMenu">
+                            <ul>
+                                <li ng-click="tela = 6" ng-class="{'ativado' : tela==6}" class="mes"><a href="javascript:void(0)"><i class="fas fa-home"></i></a></li>
+                                <li ng-click="tela = 1" ng-class="{'ativado' : tela==1}" class="ponto"><a href="javascript:void(0)"><i class="fas fa-heart"></i></a></li>
+                                <li ng-click="tela = 2" ng-class="{'ativado' : tela==2}" class="hoje"><a href="javascript:void(0)"><i class="fas fa-search"></i></a></li>
+                                <li ng-click="tela = 3" ng-class="{'ativado' : tela==3}" class="mes"><a href="javascript:void(0)"><i class="fas fa-tag"></i></a></li>
+                                <li ng-click="sair()" class="sair hide"><a href="javascript:void(0)"><i class="fas fa-sign-out-alt"></i></a></li>
+                            </ul>
+                        </nav>
+                        <span ng-if="flagMostrarRodape">Copyright &copy; - PWMS - versão: 1.0.0</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

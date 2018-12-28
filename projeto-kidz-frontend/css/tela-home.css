@@ -1,0 +1,14 @@
+#home .alert {
+  margin-top: 40px;
+}
+#home #meio {
+  margin: 0 auto;
+}
+#home #meio h2 {
+  text-align: center;
+}
+#home #meio .btn.acoes {
+  width: 100%;
+  max-width: 300px;
+  height: 43px;
+}

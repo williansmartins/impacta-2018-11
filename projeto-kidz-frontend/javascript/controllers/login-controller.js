@@ -12,34 +12,39 @@ angular.module('principal')
     $scope.$storage = $localStorage;
     $scope.flagMostrarLogin = true;
 
-    $scope.solicitar = function(){
-    	console.info("solicitando para:");
-    	console.info($scope.form);
+    // $scope.solicitar = function(){
+    // 	console.info("solicitando para:");
+    // 	console.info($scope.form);
 
-    	LoginService.validarDisponibilidade($scope.form)
-        .success(function(response, status){
-            if(status == 406){
-        		apresentarMensagem("Usuário não disponível");
-        	}else{
-        		cadastrar();
-        	}
-        })
-        .error(function(response){
+    // 	LoginService.validarDisponibilidade($scope.form)
+    //     .success(function(response, status){
+    //         if(status == 406){
+    //     		apresentarMensagem("Usuário não disponível");
+    //     	}else{
+    //     		cadastrar();
+    //     	}
+    //     })
+    //     .error(function(response){
         	
-        	console.info(response);
-            apresentarMensagem("Usuário indisponível:");
-        });
-    }
+    //     	console.info(response);
+    //         apresentarMensagem("Usuário indisponível:");
+    //     });
+    // }
 
-    var cadastrar = function(){
+    $scope.cadastrar = function(){
 
-    	//validar email
+    	//todo: validar email
 
     	//validar usuario
-    	LoginService.signup($scope.form)
+    	LoginService.cadastrar($scope.form)
         .success(function(response, status){
-    		apresentarMensagem("Cadastro efetuado com sucesso, a partir de agora você pode entrar com seu usuário e senha.");
-    		$scope.flagMostrarLogin = true;
+            if(status == 200 && response != null){
+        		apresentarMensagem("Cadastro efetuado com sucesso, a partir de agora você pode entrar com seu usuário e senha.");
+        		$scope.flagMostrarLogin = true;
+            }else{
+                //TODO: tratar erro 409(quando usuario ja esta cadastrado)
+                apresentarMensagem("Erro ao solicitar cadastro");
+            }
         })
         .error(function(response){
             apresentarMensagem("Erro ao solicitar cadastro");
@@ -48,30 +53,31 @@ angular.module('principal')
 
     $scope.login = function(){
         LoginService.login($scope.form)
-        .success(function(response){
+        .success(function(data, status, headers, config){
 
-            //TODO: nao era pra ser assim, erro de login tinha que cair em error...
-            if(response.status=="error"){
-                apresentarMensagem("Houve um problema ao tentar fazer o login.");
-            }else{
-                $scope.nome = response.user.name;
-                $scope.tipo = response.user.tipo;
-                $localStorage.nome = response.user.name;
-                $localStorage.token = response.token;
-                $localStorage.tipo = response.user.tipo;
-                $scope.temErro = false;
-                $scope.$storage.usuarioLogado = true;
+            debugger;
+            // //TODO: nao era pra ser assim, erro de login tinha que cair em error...
+            // if(response.status=="error"){
+            //     apresentarMensagem("Houve um problema ao tentar fazer o login.");
+            // }else{
+            //     $scope.nome = response.user.name;
+            //     $scope.tipo = response.user.tipo;
+            //     $localStorage.nome = response.user.name;
+            //     $localStorage.token = response.token;
+            //     $localStorage.tipo = response.user.tipo;
+            //     $scope.temErro = false;
+            //     $scope.$storage.usuarioLogado = true;
                 
-                var objetoGlogal = {
-                	"localstorage" : $localStorage,
-                    "flagMostrarMenu" : true,
-                	"flagMostrarRodape" : false
-                }
+            //     var objetoGlogal = {
+            //     	"localstorage" : $localStorage,
+            //         "flagMostrarMenu" : true,
+            //     	"flagMostrarRodape" : false
+            //     }
 
-                $rootScope.$broadcast('topic', objetoGlogal);
+            //     $rootScope.$broadcast('topic', objetoGlogal);
 
-                $location.path("/home");
-            }
+            //     $location.path("/home");
+            // }
 
         })
         .error(function(response){

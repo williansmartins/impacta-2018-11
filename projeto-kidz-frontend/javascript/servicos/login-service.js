@@ -16,36 +16,36 @@ function LoginService ($q, $window, $http) {
         login : function (form) {
             return $http({
                 method : "POST",
-                url : barramento + "/signin",
-                params: {
-                    'email': form.email,
+                url : barramento + "/login",
+                data: {
+                    'username': form.email,
                     'password': form.password
                 }
             })
         },
 
-        signup : function (form) {
+        cadastrar : function (form) {
             return $http({
                 method : "POST",
-                url : barramento + "/signup",
-                params: {
-                    'name': form.name,
-                    'email': form.email,
-                    'password': form.password,
-                    'tipo': 'c'
+                url : barramento + "/user",
+                data: {
+                    "name" : form.name,
+                    "lastName" : form.name,
+                    "email" : form.email,
+                    "password" : form.password
                 }
             })
         },
 
-        validarDisponibilidade : function (form) {
-            return $http({
-                method : "POST",
-                url : barramento + "/validarDisponibilidade",
-                params: {
-                    'email': form.email
-                }
-            })
-        },
+        // validarDisponibilidade : function (form) {
+        //     return $http({
+        //         method : "POST",
+        //         url : barramento + "/validarDisponibilidade",
+        //         params: {
+        //             'email': form.email
+        //         }
+        //     })
+        // },
 
         logout : function (data) {
             $window.sessionStorage.setItem("token", "");

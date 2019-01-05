@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class Criancas {
+public class Crianca {
 	
 	private Long id;
 	private Long user_id;

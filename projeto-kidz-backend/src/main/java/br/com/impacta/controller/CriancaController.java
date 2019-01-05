@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.impacta.Model.Crianca;
-import br.com.impacta.Model.Sexo;
+import Enumeric.SexoEnum;
+import model.Crianca;
+
 
 
 @Controller
@@ -33,8 +34,8 @@ public class CriancaController {
 		
 		Crianca crianca = new Crianca();
 		crianca.setNome("Victor");
-		crianca.setUser_id(1);
-		crianca.setSexo(Sexo.MASCULINIO);
+		crianca.setUser_id(1L);
+		crianca.setSexo(SexoEnum.MASCULINO.getTipoSexo());
 		crianca.setNascimento(LocalDate.now());
 		
 				
@@ -51,8 +52,8 @@ public class CriancaController {
 	public Crianca buscar() {
 		Crianca crianca = new Crianca();
 		crianca.setNome("Victor");
-		crianca.setUser_id(1);
-		crianca.setSexo(Sexo.MASCULINIO);
+		crianca.setUser_id(1L);
+		crianca.setSexo(SexoEnum.MASCULINO.getTipoSexo());
 		crianca.setNascimento(LocalDate.now());
 		return crianca;
 	}

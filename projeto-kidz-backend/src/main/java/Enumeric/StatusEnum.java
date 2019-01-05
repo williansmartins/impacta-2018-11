@@ -6,7 +6,7 @@ public enum StatusEnum {
 	DISPONIVEL("DISPONÍVEL"),
 	INDISPONIVEL("INDISPONÍVEL");
 	
-	String Status;
+	String status;
 
 	private StatusEnum(String status) {
 		Status = status;
@@ -16,6 +16,6 @@ public enum StatusEnum {
 		return Status;
 	}
 	
-	
+		
 
 }

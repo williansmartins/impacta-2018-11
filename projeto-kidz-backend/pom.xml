@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.impacta</groupId>
-	<artifactId>spring-mvc-annotations</artifactId>
+	<artifactId>projeto-kidz-backend</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>spring mvc - annotations</name>
+	<name>projeto-kidz-backend</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -40,7 +40,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-mvc</finalName>
+		<finalName>projeto-kidz-backend</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

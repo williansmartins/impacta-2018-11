@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import Enumeric.CategoriaEnum;
-import Enumeric.SexoEnum;
-import Enumeric.StatusEnum;
-import model.Produto;
+import br.com.impacta.enumeric.CategoriaEnum;
+import br.com.impacta.enumeric.SexoEnum;
+import br.com.impacta.enumeric.StatusEnum;
+import br.com.impacta.model.Produto;
 
 
 @Controller

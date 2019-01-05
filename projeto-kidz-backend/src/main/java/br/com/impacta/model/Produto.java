@@ -1,4 +1,4 @@
-package model;
+package br.com.impacta.model;
 
 public class Produto {
 

@@ -1,4 +1,4 @@
-package Enumeric;
+package br.com.impacta.enumeric;
 
 public enum SexoEnum {
 	

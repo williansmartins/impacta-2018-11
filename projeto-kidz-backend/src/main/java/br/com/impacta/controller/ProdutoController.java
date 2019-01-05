@@ -3,6 +3,8 @@ package br.com.impacta.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.net.ssl.SSLEngineResult.Status;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.impacta.model.Categoria;
-import br.com.impacta.model.Produto;
-import br.com.impacta.model.Sexo;
-import br.com.impacta.model.Status;
+import Enumeric.CategoriaEnum;
+import Enumeric.SexoEnum;
+import Enumeric.StatusEnum;
+import model.Produto;
+
 
 @Controller
 @RequestMapping("/produto")
@@ -32,14 +35,14 @@ public class ProdutoController {
 	public ResponseEntity<List<Produto>> buscarTodos() {
 		
 		Produto produto = new Produto();
-		produto.setCategoria(Categoria.BLUSA);
+		produto.setCategoria(CategoriaEnum.BLUSA.getTipoCategoria());
 		produto.setCor("Branco");
 		produto.setDescricao("Descricao");
-		produto.setSexo(Sexo.MASCULINO);
-		produto.setStatus(Status.DISPONIVEL);
+		produto.setSexo(SexoEnum.MASCULINO.getTipoSexo());
+		produto.setStatus(StatusEnum.DISPONIVEL.getStatus());
 		produto.setTamanho("P");
 		produto.setTitulo("Novo");
-		produto.setUser_id(1L);
+		produto.setUser_id(1L);;
 		
 		List<Produto> lista = new ArrayList<>();
 		lista.add(produto);
@@ -53,11 +56,11 @@ public class ProdutoController {
 	@ResponseBody
 	public Produto buscar() {
 		Produto produto = new Produto();
-		produto.setCategoria(Categoria.BLUSA);
+		produto.setCategoria(CategoriaEnum.BLUSA.getTipoCategoria());
 		produto.setCor("Branco");
 		produto.setDescricao("Descricao");
-		produto.setSexo(Sexo.MASCULINO);
-		produto.setStatus(Status.DISPONIVEL);
+		produto.setSexo(SexoEnum.MASCULINO.getTipoSexo());
+		produto.setStatus(StatusEnum.DISPONIVEL.getStatus());
 		produto.setTamanho("P");
 		produto.setTitulo("Novo");
 		produto.setUser_id(1L);

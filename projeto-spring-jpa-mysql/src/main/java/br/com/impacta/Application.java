@@ -1,11 +1,13 @@
-package com.mkyong;
+package br.com.impacta;
 
-import com.mkyong.dao.CustomerRepository;
-import com.mkyong.model.Customer;
+import br.com.impacta.dao.CustomerRepository;
+import br.com.impacta.model.Customer;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
@@ -21,7 +23,9 @@ import static java.lang.System.exit;
 //@EntityScan(
 //        basePackageClasses = { SpringBootConsoleApplication.class, Jsr310JpaConverters.class }
 //)
+
 @SpringBootApplication
+@ComponentScan({"br.com.impacta.controller"})
 public class Application implements CommandLineRunner {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -49,7 +53,7 @@ public class Application implements CommandLineRunner {
 //        findByDateBetween();
         System.out.println("Done!");
 
-        exit(0);
+//        exit(0);
     }
 
 	private void findByDateBetween() throws ParseException {

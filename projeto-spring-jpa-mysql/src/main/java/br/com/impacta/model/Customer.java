@@ -1,4 +1,4 @@
-package com.mkyong.model;
+package br.com.impacta.model;
 
 import javax.persistence.*;
 import java.util.Date;

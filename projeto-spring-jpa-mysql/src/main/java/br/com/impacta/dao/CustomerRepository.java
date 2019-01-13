@@ -1,9 +1,10 @@
-package com.mkyong.dao;
+package br.com.impacta.dao;
 
-import com.mkyong.model.Customer;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+
+import br.com.impacta.model.Customer;
 
 import java.util.Date;
 import java.util.List;

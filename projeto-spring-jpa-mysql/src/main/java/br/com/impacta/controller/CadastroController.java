@@ -48,11 +48,11 @@ public class CadastroController {
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)  
 	@ResponseBody
-	public Cadastro buscar() {
+	public Cadastro buscar(@PathVariable String id) {
 		Cadastro oCadastro = new Cadastro();
 		oCadastro.setEmail("aluno@gmail.com");
 		oCadastro.setId(1l);
-		oCadastro.setSenha("123");
+		oCadastro.setSenha(id);
 		return oCadastro;
 	}
 

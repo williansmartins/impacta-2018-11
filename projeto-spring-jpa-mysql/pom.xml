@@ -4,8 +4,8 @@
   http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mkyong</groupId>
-    <artifactId>spring-boot-jpa-oracle-example</artifactId>
+    <groupId>br.com.impacta</groupId>
+    <artifactId>projeto-spring-jpa-mysql</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
 

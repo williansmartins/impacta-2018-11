@@ -1,4 +1,4 @@
-package impacta;
+package br.com.impacta;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

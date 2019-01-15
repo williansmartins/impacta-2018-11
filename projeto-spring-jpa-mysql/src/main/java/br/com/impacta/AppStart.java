@@ -1,32 +1,31 @@
 package br.com.impacta;
 
-import br.com.impacta.dao.CustomerRepository;
-import br.com.impacta.model.Customer;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.sql.DataSource;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.stream.Stream;
 
-import static java.lang.System.exit;
+import javax.sql.DataSource;
 
-//for jsr310 java 8 java.time.*
-//@EntityScan(
-//        basePackageClasses = { SpringBootConsoleApplication.class, Jsr310JpaConverters.class }
-//)
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+
+import br.com.impacta.dao.CustomerRepository;
+import br.com.impacta.model.Customer;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @ComponentScan({"br.com.impacta.controller"})
-public class Application implements CommandLineRunner {
+@EnableSwagger2
+public class AppStart implements CommandLineRunner {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -35,10 +34,21 @@ public class Application implements CommandLineRunner {
 
     @Autowired
     CustomerRepository customerRepository;
+    
+    @Bean
+    public Docket api() { 
+        return new Docket(DocumentationType.SWAGGER_2)  
+          .select()                                  
+          .apis(RequestHandlerSelectors.any())              
+          .paths(PathSelectors.any())                          
+          .build();                                           
+    }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(AppStart.class, args);
     }
+    
+    
 
     @Override
     public void run(String... args) throws Exception {

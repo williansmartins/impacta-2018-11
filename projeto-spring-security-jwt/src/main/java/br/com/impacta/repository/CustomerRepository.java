@@ -1,4 +1,4 @@
-package br.com.original.repository;
+package br.com.impacta.repository;
 
 import java.util.Date;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import br.com.original.model.Customer;
+import br.com.impacta.model.Customer;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Long> {

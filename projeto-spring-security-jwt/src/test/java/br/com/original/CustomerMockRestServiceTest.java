@@ -1,4 +1,4 @@
-package br.com.original;
+package br.com.impacta;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,8 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.original.model.Customer;
-import br.com.original.service.CustomerService;
+import br.com.impacta.model.Customer;
+import br.com.impacta.service.CustomerService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerMockRestServiceTest {

@@ -1,4 +1,4 @@
-package br.com.original.controller.security;
+package br.com.impacta.controller.security;
 
 import java.util.Objects;
 
@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.original.exeptions.AuthenticationException;
-import br.com.original.model.security.JwtAuthenticationRequest;
-import br.com.original.model.security.JwtAuthenticationResponse;
-import br.com.original.model.security.JwtUser;
-import br.com.original.service.security.JwtTokenUtil;
+import br.com.impacta.exeptions.AuthenticationException;
+import br.com.impacta.model.security.JwtAuthenticationRequest;
+import br.com.impacta.model.security.JwtAuthenticationResponse;
+import br.com.impacta.model.security.JwtUser;
+import br.com.impacta.service.security.JwtTokenUtil;
 
 @RestController
 public class AuthenticationRestController {

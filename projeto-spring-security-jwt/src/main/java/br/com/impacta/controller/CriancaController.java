@@ -1,4 +1,4 @@
-package br.com.original.controller;
+package br.com.impacta.controller;
 
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.original.model.Crianca;
+import br.com.impacta.model.Crianca;
 import unumeric.SexoEnum;
 
 

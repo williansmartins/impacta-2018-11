@@ -1,4 +1,4 @@
-package br.com.original;
+package br.com.impacta;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,8 +10,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import br.com.original.model.Customer;
-import br.com.original.service.CustomerService;
+import br.com.impacta.model.Customer;
+import br.com.impacta.service.CustomerService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerMockRepositoryTest {

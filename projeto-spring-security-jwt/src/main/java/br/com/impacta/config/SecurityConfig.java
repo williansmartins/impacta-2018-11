@@ -1,4 +1,4 @@
-package br.com.original.config;
+package br.com.impacta.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,9 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import br.com.original.service.security.JwtAuthenticationEntryPoint;
-import br.com.original.service.security.JwtAuthorizationTokenFilter;
-import br.com.original.service.security.JwtUserDetailsService;
+import br.com.impacta.service.security.JwtAuthenticationEntryPoint;
+import br.com.impacta.service.security.JwtAuthorizationTokenFilter;
+import br.com.impacta.service.security.JwtUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

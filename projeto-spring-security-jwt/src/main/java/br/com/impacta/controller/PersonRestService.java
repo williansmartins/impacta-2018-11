@@ -1,11 +1,11 @@
-package br.com.original.controller;
+package br.com.impacta.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.original.model.Person;
+import br.com.impacta.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;

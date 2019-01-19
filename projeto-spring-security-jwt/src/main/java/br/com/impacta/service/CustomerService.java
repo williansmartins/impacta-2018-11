@@ -1,4 +1,4 @@
-package br.com.original.service;
+package br.com.impacta.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.original.model.Customer;
-import br.com.original.repository.CustomerRepository;
+import br.com.impacta.model.Customer;
+import br.com.impacta.repository.CustomerRepository;
 
 @Service
 public class CustomerService {

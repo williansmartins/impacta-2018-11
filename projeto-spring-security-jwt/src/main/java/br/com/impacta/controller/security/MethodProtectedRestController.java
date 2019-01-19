@@ -1,4 +1,4 @@
-package br.com.original.controller.security;
+package br.com.impacta.controller.security;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

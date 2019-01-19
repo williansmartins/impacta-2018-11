@@ -1,4 +1,4 @@
-package br.com.original.controller;
+package br.com.impacta.controller;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.original.model.Cadastro;
+import br.com.impacta.model.Cadastro;
 
 
 @Controller

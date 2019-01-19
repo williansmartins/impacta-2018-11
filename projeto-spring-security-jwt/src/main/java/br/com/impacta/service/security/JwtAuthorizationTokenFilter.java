@@ -1,4 +1,4 @@
-package br.com.original.service.security;
+package br.com.impacta.service.security;
 
 import java.io.IOException;
 import javax.servlet.FilterChain;

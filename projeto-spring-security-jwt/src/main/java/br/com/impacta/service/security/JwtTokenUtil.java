@@ -1,4 +1,4 @@
-package br.com.original.service.security;
+package br.com.impacta.service.security;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import br.com.original.model.security.JwtUser;
+import br.com.impacta.model.security.JwtUser;
 
 @Component
 public class JwtTokenUtil implements Serializable {

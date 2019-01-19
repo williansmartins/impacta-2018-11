@@ -1,4 +1,4 @@
-package br.com.original.model.security;
+package br.com.impacta.model.security;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

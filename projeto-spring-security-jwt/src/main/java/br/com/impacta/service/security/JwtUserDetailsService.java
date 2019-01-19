@@ -1,4 +1,4 @@
-package br.com.original.service.security;
+package br.com.impacta.service.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.original.model.security.JwtUserFactory;
-import br.com.original.model.security.User;
-import br.com.original.repository.UserRepository;
+import br.com.impacta.model.security.JwtUserFactory;
+import br.com.impacta.model.security.User;
+import br.com.impacta.repository.UserRepository;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {

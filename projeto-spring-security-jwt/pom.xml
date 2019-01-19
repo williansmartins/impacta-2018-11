@@ -4,7 +4,7 @@
   http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.original</groupId>
+    <groupId>br.com.impacta</groupId>
     <artifactId>microservico-template</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>

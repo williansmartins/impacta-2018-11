@@ -1,4 +1,4 @@
-package br.com.original.exeptions;
+package br.com.impacta.exeptions;
 
 public class AuthenticationException extends RuntimeException {
     /**

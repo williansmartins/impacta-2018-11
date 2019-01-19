@@ -1,4 +1,4 @@
-package br.com.original.controller.security;
+package br.com.impacta.controller.security;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.original.model.security.JwtUser;
-import br.com.original.service.security.JwtTokenUtil;
+import br.com.impacta.model.security.JwtUser;
+import br.com.impacta.service.security.JwtTokenUtil;
 
 @RestController
 public class UserRestController {

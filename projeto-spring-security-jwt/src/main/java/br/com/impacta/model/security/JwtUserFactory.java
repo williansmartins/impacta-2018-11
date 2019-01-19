@@ -1,4 +1,4 @@
-package br.com.original.model.security;
+package br.com.impacta.model.security;
 
 import java.util.List;
 import java.util.stream.Collectors;

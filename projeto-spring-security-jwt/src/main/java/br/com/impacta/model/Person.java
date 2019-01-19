@@ -1,4 +1,4 @@
-package br.com.original.model;
+package br.com.impacta.model;
 
 public class Person {
     private String name;

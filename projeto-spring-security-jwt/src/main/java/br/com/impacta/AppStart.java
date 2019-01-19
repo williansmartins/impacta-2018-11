@@ -1,4 +1,4 @@
-package br.com.original;
+package br.com.impacta;
 
 import javax.sql.DataSource;
 

@@ -1,4 +1,4 @@
-package br.com.original;
+package br.com.impacta;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.original.model.Customer;
-import br.com.original.service.CustomerService;
+import br.com.impacta.model.Customer;
+import br.com.impacta.service.CustomerService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AppStart.class, webEnvironment=WebEnvironment.DEFINED_PORT)

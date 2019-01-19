@@ -1,7 +1,6 @@
 package br.com.impacta.controller;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -14,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.model.Produto;
-import unumeric.CategoriaEnum;
-import unumeric.SexoEnum;
-import unumeric.StatusEnum;
+import br.com.impacta.model.enums.CategoriaEnum;
+import br.com.impacta.model.enums.SexoEnum;
+import br.com.impacta.model.enums.StatusEnum;
 
 
 

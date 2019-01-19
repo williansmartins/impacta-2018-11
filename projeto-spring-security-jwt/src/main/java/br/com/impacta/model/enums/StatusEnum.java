@@ -1,4 +1,4 @@
-package unumeric;
+package br.com.impacta.model.enums;
 
 public enum StatusEnum {
 

@@ -1,7 +1,6 @@
 package br.com.impacta.controller;
 
 import java.time.LocalDate;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.model.Crianca;
-import unumeric.SexoEnum;
+import br.com.impacta.model.enums.SexoEnum;
 
 
 

@@ -23,7 +23,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@ComponentScan({"br.com.impacta.controller"})
 @EnableSwagger2
 public class AppStart implements CommandLineRunner {
 

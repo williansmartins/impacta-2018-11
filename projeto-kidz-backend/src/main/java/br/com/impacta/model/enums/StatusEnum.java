@@ -1,8 +1,8 @@
-package br.com.impacta.enumeric;
+package br.com.impacta.model.enums;
 
 public enum StatusEnum {
 
-	VENDIDO("VENDIDO"), DISPONIVEL("DISPONÍVEL"), INDISPONIVEL("INDISPONÍVEL");
+	VENDIDO("VENDIDO"), DISPONIVEL("DISPONï¿½VEL"), INDISPONIVEL("INDISPONï¿½VEL");
 
 	String status;
 

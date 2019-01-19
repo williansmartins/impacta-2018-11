@@ -2,11 +2,18 @@ package br.com.impacta.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity
 public class Crianca {
 	
+	@Id
 	private Long id;
 	private Long user_id;
 	private String nome;
+	
 	private LocalDate nascimento;
 	private String sexo;
 	

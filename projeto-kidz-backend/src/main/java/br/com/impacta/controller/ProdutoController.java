@@ -3,8 +3,6 @@ package br.com.impacta.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.net.ssl.SSLEngineResult.Status;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.impacta.enumeric.CategoriaEnum;
-import br.com.impacta.enumeric.SexoEnum;
-import br.com.impacta.enumeric.StatusEnum;
 import br.com.impacta.model.Produto;
+import br.com.impacta.model.enums.CategoriaEnum;
+import br.com.impacta.model.enums.SexoEnum;
+import br.com.impacta.model.enums.StatusEnum;
+
+
 
 
 @Controller

@@ -1,6 +1,7 @@
 package br.com.impacta.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.impacta.model.Cadastro;
+
 
 @Controller
 @RequestMapping("/cadastro")
@@ -33,7 +35,7 @@ public class CadastroController {
 
 		List<Cadastro> lista = new ArrayList<>();
 		
-		/*Esse for é apenas para mudar o nome do usuario
+		/*Esse for ï¿½ apenas para mudar o nome do usuario
 		 * apagar o FOR depois*/
 		for (int i = 1; i <= 10; i++) {
 			Cadastro oCadastro = new Cadastro();
@@ -48,11 +50,11 @@ public class CadastroController {
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)  
 	@ResponseBody
-	public Cadastro buscar() {
+	public Cadastro buscar(@PathVariable String id) {
 		Cadastro oCadastro = new Cadastro();
 		oCadastro.setEmail("aluno@gmail.com");
 		oCadastro.setId(1l);
-		oCadastro.setSenha("123");
+		oCadastro.setSenha(id);
 		return oCadastro;
 	}
 

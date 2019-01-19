@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.impacta.enumeric.SexoEnum;
 import br.com.impacta.model.Crianca;
+import br.com.impacta.model.enums.SexoEnum;
+
+
 
 @Controller
 @RequestMapping("/crianca")

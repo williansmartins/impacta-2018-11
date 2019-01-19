@@ -1,4 +1,4 @@
-package br.com.impacta.enumeric;
+package br.com.impacta.model.enums;
 
 public enum SexoEnum {
 	

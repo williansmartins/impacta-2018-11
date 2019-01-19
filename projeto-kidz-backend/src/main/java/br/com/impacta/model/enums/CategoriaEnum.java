@@ -1,8 +1,8 @@
-package br.com.impacta.enumeric;
+package br.com.impacta.model.enums;
 
 public enum CategoriaEnum {
 	
-	CALCADO("CALÇADO"),
+	CALCADO("CALï¿½ADO"),
 	BLUSA("BLUSA");
 	
 	String tipoCategoria;

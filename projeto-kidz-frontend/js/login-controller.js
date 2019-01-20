@@ -1,13 +1,6 @@
 app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage, CriancaService) {
 
-    $scope.form = {
-        username : "admin",
-        password : "admin",
-        user_id: 123, 
-        nome : "Luis Felipe", 
-        dataNasc : "", 
-        sexo : "Masculino"
-    }
+   
 
     $scope.criancas = null;
 
@@ -92,6 +85,6 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
         $scope.buscarCriancas();
     }
 
-    init();
+    //init();
 
 });

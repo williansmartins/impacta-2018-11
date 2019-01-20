@@ -3,6 +3,7 @@ package br.com.impacta.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import br.com.impacta.model.Produto;
 import br.com.impacta.model.enums.CategoriaEnum;
 import br.com.impacta.model.enums.SexoEnum;
 import br.com.impacta.model.enums.StatusEnum;
+import br.com.impacta.repository.ProdutoRepository;
 
 
 
@@ -24,9 +26,13 @@ import br.com.impacta.model.enums.StatusEnum;
 @RequestMapping("/produto")
 public class ProdutoController {
 
+	@Autowired
+	private ProdutoRepository repositorio;
+	
 	@RequestMapping(value="", method=RequestMethod.POST)  
 	@ResponseBody
 	public Produto inserir(@RequestBody Produto entrada) {
+		repositorio.save(entrada);
 		return entrada;
 	}
 	

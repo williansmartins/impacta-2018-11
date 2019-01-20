@@ -17,7 +17,7 @@ function ProdutoService ($q, $window, $http) {
                     "tamanho":form.tamanho,
                     "status":form.status,
                     "categoria":form.categoria,
-                    "user_id":user_id
+                    "user_id":form.user_id
                 }
             })         
         },

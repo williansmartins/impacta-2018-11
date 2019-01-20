@@ -11,6 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script type="text/javascript" src="js/ngStorage.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
 	<script type="text/javascript" src="js/login-service.js"></script>
 	<script type="text/javascript" src="js/crianca-service.js"></script>
 	<script type="text/javascript" src="js/login-controller.js"></script>
@@ -47,13 +48,13 @@
 		<input placeholder="user_id" class="crianca input-global form-control" type="text" name="user_id" ng-model="form.user_id"/>
 		<input placeholder="Nome da criança" class="crianca input-global form-control" type="text" name="nome"  ng-model="form.nome"/>
 		<input placeholder="Data nascimento" class="crianca input-global form-control" type="date" name="dataNasc"  ng-model="form.dataNasc"/>
-		<select class="form-control form-control-sm input-global">
+		<select class="form-control form-control-sm input-global" ng-model="form.sexo">
   			<option>Masculino</option>
   			<option>Feminino</option>
 		</select>
-		<a href="#" class="cadastrar btn btn-primary input-global" ng-click="cadastrar()">cadastrar</a>
+		<a href="#" class="cadastrar btn btn-primary input-global" ng-click="cadastrarCrianca()">cadastrar</a>
 		<br/>
-		<a href="#" class="cadastrar btn btn-danger input-global" ng-click="cadastrar()">deletar</a>
+		<a href="#" class="cadastrar btn btn-danger input-global" ng-click="deletarCrianca()">deletar</a>
 	</div>
 </body>
 </html>

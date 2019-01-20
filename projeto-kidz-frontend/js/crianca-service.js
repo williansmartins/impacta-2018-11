@@ -39,6 +39,19 @@ function CriancaService ($q, $window, $http) {
             })
         },
 
+        cadastrar : function (form) {
+            return $http({
+                method : "POST",
+                url : backend + "/crianca",
+                data: {
+                    "user_id": form.user_id,
+                    "nome": form.nome,
+                    "nascimento" : form.nascimento,
+                    "sexo" : form.sexo
+                }
+            })
+        },
+
         deletar : function (form) {
             return $http({
                 method : "DELETE",

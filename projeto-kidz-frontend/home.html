@@ -15,44 +15,14 @@
 	<script type="text/javascript" src="js/login-controller.js"></script>
 </head>
 
-<body ng-app="kidz" id="index" class="ng-scope">
-        <nav class="navbar navbar-inverse ng-scope" ng-controller="NavegadorController">
-            <h2 ng-click="voltarParaHome()">Kidz</h2>
-        </nav>   
-        <div class="base">
-            <div class="loading-wrapper" loading="" style="display: none;">
-                <div class="loading"></div>
-                <div class="overlay2"></div>
-            </div>    
-            <!-- ngView: --><div ng-view="" class="view ng-scope"> <div id="home" class="container-fluid ng-scope">
+<body ng-app="myApp" id="index" class="ng-scope">
  	<div id="meio" class="row center">
 		<div class="col-3">
-	        <a href="#/filhos" class="btn btn-success acoes ">Meus Kidz</a><br><br>
+	        <a href="crianca.html" class="btn btn-success acoes ">Meus Kidz</a><br><br>
 	        <a href="#/xxx" class="btn btn-success acoes">Meu Perfil</a><br><br>
 			<a href="#/xxx" class="btn btn-success acoes ">Meus Produtos</a><br><br>
 	        <a href="#/login" class="btn btn-success acoes ">Sair</a><br><br>
     	</div>
   	</div> 
- </div> </div>
-        </div>
-        <div class="footer">
-            <div class="wrapper">
-                <div class="rodape center">
-                    <span class="center ng-scope" ng-controller="NavegadorController">
-                        <!-- ngIf: flagMostrarMenu --><nav ng-if="flagMostrarMenu" class="ng-scope">
-                            <ul>
-                                <li ng-click="tela = 6" ng-class="{'ativado' : tela==6}" class="mes ativado"><a href="javascript:void(0)"><i class="fas fa-home"></i></a></li>
-                                <li ng-click="tela = 1" ng-class="{'ativado' : tela==1}" class="ponto"><a href="javascript:void(0)"><i class="fas fa-heart"></i></a></li>
-                                <li ng-click="tela = 2" ng-class="{'ativado' : tela==2}" class="hoje"><a href="javascript:void(0)"><i class="fas fa-search"></i></a></li>
-                                <li ng-click="tela = 3" ng-class="{'ativado' : tela==3}" class="mes"><a href="javascript:void(0)"><i class="fas fa-tag"></i></a></li>
-                                <li ng-click="sair()" class="sair hide"><a href="javascript:void(0)"><i class="fas fa-sign-out-alt"></i></a></li>
-                            </ul>
-                        </nav><!-- end ngIf: flagMostrarMenu -->
-                        <!-- ngIf: flagMostrarRodape -->
-                    </span>
-                </div>
-            </div>
-        </div>
-    
 </body>
 </html>

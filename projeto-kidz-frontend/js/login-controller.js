@@ -5,7 +5,7 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
     $scope.criancas = null;
 
     $scope.entrar = function(){
-	    // console.info($localStorage);
+        // console.info($localStorage);
 
         LoginService.login($scope.form)
         .then(function successCallback(response) {
@@ -24,8 +24,17 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
             console.info("error:");
             console.info(response);
         });
+    }
 
-
+    $scope.preencherCrianca = function(crianca){
+        $scope.form = {
+            username : crianca.username,
+            password : crianca.password,
+            user_id: crianca.user_id, 
+            nome : crianca.nome, 
+            dataNasc : crianca.dataNasc, 
+            sexo : crianca.sexo
+        }
     }
 
     $scope.cadastrarCrianca = function(){
@@ -46,6 +55,19 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
             console.info("error:");
             console.info(response);
         });
+
+    }
+
+
+    $scope.limparCampos = function(){
+        $scope.form = {
+            username : "",
+            password : "",
+            user_id: "", 
+            nome : "", 
+            dataNasc : "", 
+            sexo : "",
+        }
 
     }
 

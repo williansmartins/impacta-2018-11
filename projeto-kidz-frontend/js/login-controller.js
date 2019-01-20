@@ -35,6 +35,7 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
 
     $scope.preencherCrianca = function(crianca){
         $scope.form = {
+            id: crianca.id,
             username : crianca.username,
             password : crianca.password,
             user_id: crianca.user_id, 
@@ -46,7 +47,7 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
 
     $scope.cadastrarCrianca = function(){
         // console.info($localStorage);
-        if($scope.form.user_id != null) {
+        if($scope.form.id == null) {
 
             CriancaService.cadastrar($scope.form)
             .then(function successCallback(response) {
@@ -131,6 +132,6 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
         $scope.buscarCriancas();
     }
 
-    //init();
+    init();
 
 });

@@ -1,12 +1,12 @@
 app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage, CriancaService) {
 
     $scope.form = {
-        username : "admin",
-        password : "admin",
-        user_id: 123, 
-        nome : "Luis Felipe", 
+        username : "",
+        password : "",
+        user_id: "", 
+        nome : "", 
         dataNasc : "", 
-        sexo : "Masculino"
+        sexo : ""
     }
 
     $scope.criancas = null;
@@ -46,23 +46,40 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
 
     $scope.cadastrarCrianca = function(){
         // console.info($localStorage);
+        if($scope.form.user_id != null) {
 
-        CriancaService.cadastrar($scope.form)
-        .then(function successCallback(response) {
-            // this callback will be called asynchronously
-            // when the response is available
-            console.info("sucesso:");
-            console.info(response);
-            $scope.buscarCriancas();
+            CriancaService.cadastrar($scope.form)
+            .then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.info("sucesso:");
+                console.info(response);
+                $scope.buscarCriancas();
 
-          }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-            alert("Erro ao tentar fazer o cadastro.");
-            console.info("error:");
-            console.info(response);
-        });
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                alert("Erro ao tentar fazer o cadastro.");
+                console.info("error:");
+                console.info(response);
+            });
+        } else {
+            CriancaService.atualizar($scope.form)
+            .then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.info("sucesso:");
+                console.info(response);
+                $scope.buscarCriancas();
 
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                alert("Erro ao tentar atualizar.");
+                console.info("error:");
+                console.info(response);
+            });
+        }
     }
 
     $scope.buscarCriancas = function(){

@@ -38,18 +38,7 @@ public class CriancaController {
 	@ResponseBody
 	public ResponseEntity<List<Crianca>> buscarTodos() {
 		
-		Crianca crianca = new Crianca();
-		crianca.setNome("Victor");
-		crianca.setUser_id(1l);
-		crianca.setSexo(SexoEnum.MASCULINO.getTipoSexo());
-		crianca.setNascimento(LocalDate.now());
-		
-				
-		List<Crianca> lista = new ArrayList<>();
-		lista.add(crianca);
-		lista.add(crianca);
-		lista.add(crianca);
-		
+		List<Crianca> lista = (List<Crianca>) repositorio.findAll();		
 		return new ResponseEntity<List<Crianca>>(lista, HttpStatus.OK) ;
 	}
 

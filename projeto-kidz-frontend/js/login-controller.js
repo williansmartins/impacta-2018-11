@@ -40,7 +40,7 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
             password : crianca.password,
             user_id: crianca.user_id, 
             nome : crianca.nome, 
-            dataNasc : crianca.dataNasc, 
+            dataNasc : crianca.nascimento, 
             sexo : crianca.sexo
         }
     }

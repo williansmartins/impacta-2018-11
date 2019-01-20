@@ -44,22 +44,26 @@ public class CriancaController {
 
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)  
 	@ResponseBody
-	public Crianca buscar() {
-		Crianca crianca = new Crianca();
-		crianca.setNome("Victor");
-		crianca.setUser_id(1l);
-		crianca.setSexo(SexoEnum.MASCULINO.getTipoSexo());
-		crianca.setNascimento(LocalDate.now());
-		return crianca;
+	public ResponseEntity<Crianca> buscar(Long id) {
+
+		Crianca crianca = repositorio.findOne(Long.valueOf(id));
+		return new ResponseEntity<Crianca>(crianca, HttpStatus.OK);
+		
 	}
 
 	@ResponseBody
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
-	public ResponseEntity<Crianca> atualizar(@RequestBody Crianca crianca, @PathVariable String id) {
+	public ResponseEntity<Crianca> atualizar(@RequestBody Crianca criancaEntrada, @PathVariable Long id) {
+		Crianca criancaSaida = repositorio.findOne(Long.valueOf(id));
 		
-		System.out.println(crianca);
+
+		criancaSaida.setNome(criancaEntrada.getNome());
+		criancaSaida.setNascimento(criancaEntrada.getNascimento());
+		criancaSaida.setSexo(criancaEntrada.getSexo());
+		criancaSaida.setUser_id(criancaEntrada.getUser_id());
 		
-		return new ResponseEntity<Crianca>(crianca, HttpStatus.OK); 
+		repositorio.save(criancaSaida);
+		return new ResponseEntity<Crianca>(criancaSaida, HttpStatus.OK); 
 	}
 
 	@ResponseBody
@@ -67,7 +71,7 @@ public class CriancaController {
 	public ResponseEntity<Crianca> deletar(@PathVariable String id) {
 		repositorio.delete(Long.valueOf(id));
 		System.out.println("Deletando o id:" + id);
-		return new ResponseEntity<Crianca>(new Crianca(), HttpStatus.INTERNAL_SERVER_ERROR) ;
+		return new ResponseEntity<Crianca>(new Crianca(), HttpStatus.OK) ;
 	}
 	
 

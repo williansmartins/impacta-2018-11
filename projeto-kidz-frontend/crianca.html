@@ -55,6 +55,28 @@
 		<a href="#" class="cadastrar btn btn-primary input-global" ng-click="cadastrarCrianca()">cadastrar</a>
 		<br/>
 		<a href="#" class="cadastrar btn btn-danger input-global" ng-click="deletarCrianca()">deletar</a>
+		<br />
+		<br />
+		<br />
+		<div class="lista">
+			<table class="table table-striped">
+				<tr>
+					<td>id</td>
+					<td>nome</td>
+					<td>sexo</td>
+					<td>ações</td>
+				</tr>
+				<tr ng-repeat="crianca in criancas | orderBy:nome">
+					<td>{{crianca.id}}</td>
+					<td>{{crianca.nome}}</td>
+					<td>{{crianca.sexo}}</td>
+					<td>
+						<a href="javascript:void(0)" class="exlcuir btn btn-danger" ng-click="excluirCrianca(crianca.id)">excluir</a>
+						<a href="javascript:void(0)" class="exlcuir btn btn-success" ng-click="editarCrianca(crianca.id)">editar</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

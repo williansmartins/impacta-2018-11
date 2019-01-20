@@ -52,13 +52,10 @@ function CriancaService ($q, $window, $http) {
             })
         },
 
-        deletar : function (form) {
+        deletar : function (id) {
             return $http({
                 method : "DELETE",
-                url : backend + "/crianca/" +form.id,
-                data: {
-                    "id" : form.id
-                }
+                url : backend + "/crianca/" +id
             })
         },
 

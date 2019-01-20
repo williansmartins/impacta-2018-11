@@ -56,6 +56,19 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
 
     }
 
+
+    $scope.limparCampos = function(){
+        $scope.form = {
+            username : "",
+            password : "",
+            user_id: "", 
+            nome : "", 
+            dataNasc : "", 
+            sexo : "",
+        }
+
+    }
+
     $scope.buscarCriancas = function(){
         CriancaService.buscarTodos()
         .then(function successCallback(response) {

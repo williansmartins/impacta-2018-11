@@ -1,31 +1,40 @@
-var app = angular.module('myApp', []);
-
-app.controller('criancaCtrl', function($scope, $http) {
- 
-	// $scope.email;
-
-   	$scope.entrar = function(){
-   		Jquery.post( "http://172.16.18.38:8080/auth", {
-            'username': $scope.email,
-            'password': $scope.senha
-        } );
+app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage) {
 
 
-   		// $http({
-     //        method : "POST",
-     //        url : "http://172.16.18.38:8080/auth",
-     //        data: {
-     //            'username': $scope.email,
-     //            'password': $scope.senha
-     //        }
-     //    })
-   	}
 
-   	$scope.cadastrar = function(){
-	   	$http.get("http://172.16.18.38:8080/cadastro/" + $scope.senha)
-	   	.then(function (response) {
-	   		console.info(response.data.senha);
-	   	});
-   	}
+    $scope.entrar = function(){
+	    // console.info($localStorage);
+
+        LoginService.login($scope.form)
+        .success(function(response){
+
+            if(response.status=="error"){
+                alert("Houve um problema ao tentar fazer o login.");
+            }else{
+                $scope.nome = response.user.name;
+                $scope.tipo = response.user.tipo;
+                // $localStorage.nome = response.user.name;
+                // $localStorage.token = response.token;
+                // $localStorage.tipo = response.user.tipo;
+                $scope.temErro = false;
+                $scope.$storage.usuarioLogado = true;
+                
+                var objetoGlogal = {
+                	// "localstorage" : $localStorage,
+                	"flagMostrarMenu" : true
+                }
+
+                $rootScope.$broadcast('topic', objetoGlogal);
+
+                $location.path("/contas");
+            }
+
+        })
+        .error(function(response){
+            $scope.$storage.usuarioLogado = false;
+            $scope.temErro = true;
+            alert("Houve um problema ao tentar fazer o login.");
+        });
+    }
 
 });

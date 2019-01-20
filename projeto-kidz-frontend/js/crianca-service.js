@@ -46,7 +46,7 @@ function CriancaService ($q, $window, $http) {
                 data: {
                     "user_id": form.user_id,
                     "nome": form.nome,
-                    "nascimento" : form.nascimento,
+                    "nascimento" : form.dataNasc,
                     "sexo" : form.sexo
                 }
             })

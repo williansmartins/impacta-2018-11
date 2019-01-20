@@ -1,6 +1,7 @@
 package br.com.impacta.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ public class Crianca {
 	private Long user_id;
 	private String nome;
 	
-	private LocalDate nascimento;
+	private Date nascimento;
 	private String sexo;
 	
 	public Long getId() {
@@ -36,10 +37,10 @@ public class Crianca {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public LocalDate getNascimento() {
+	public Date getNascimento() {
 		return nascimento;
 	}
-	public void setNascimento(LocalDate nascimento) {
+	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
 	}
 	public String getSexo() {

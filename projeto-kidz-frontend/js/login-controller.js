@@ -55,7 +55,7 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
                 // when the response is available
                 console.info("sucesso:");
                 console.info(response);
-                $scope.buscarCriancas();
+                
 
               }, function errorCallback(response) {
                 // called asynchronously if an error occurs
@@ -71,7 +71,6 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
                 // when the response is available
                 console.info("sucesso:");
                 console.info(response);
-                $scope.buscarCriancas();
 
               }, function errorCallback(response) {
                 // called asynchronously if an error occurs
@@ -81,11 +80,15 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
                 console.info(response);
             });
         }
+
+        $scope.buscarCriancas();
+        $scope.limparCampos();
     }
 
 
     $scope.limparCampos = function(){
         $scope.form = {
+            id: null,
             username : "",
             password : "",
             user_id: "", 

@@ -65,6 +65,7 @@ public class CriancaController {
 	@ResponseBody
 	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public ResponseEntity<Crianca> deletar(@PathVariable String id) {
+		repositorio.delete(Long.valueOf(id));
 		System.out.println("Deletando o id:" + id);
 		return new ResponseEntity<Crianca>(new Crianca(), HttpStatus.INTERNAL_SERVER_ERROR) ;
 	}

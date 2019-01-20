@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/ngStorage.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/login-service.js"></script>
+	<script type="text/javascript" src="js/crianca-service.js"></script>
+	<script type="text/javascript" src="js/login-controller.js"></script>
+	<script type="text/javascript" src="js/produto-service.js"></script>
+</head>
+
+<body>
+	<div class="wrapper-content" ng-app="myApp" ng-controller="loginCtrl">
+		<img src="img/logotipo.png" title="logotipo-title" alt="logotipo-alt" />
+		<h3 class="login-titulo">Cadastro</h3>
+		<i class="fas fa-igloo" style="font-size: 40px"></i>
+		<input placeholder="titulo" class="input-global form-control" type="text" name="titulo" ng-model="form.titulo"/>
+		<input placeholder="descricao" class="input-global form-control" type="text" name="descricao"  ng-model="form.descricao"/>
+		<input placeholder="sexo" class="input-global form-control" type="text" name="sexo"  ng-model="form.sexo"/>
+		<input placeholder="cor" class="input-global form-control" type="text" name="cor"  ng-model="form.cor"/>
+		<input placeholder="tamanho" class="input-global form-control" type="text" name="tamanho"  ng-model="form.tamanho"/>
+		<input placeholder="status" class="input-global form-control" type="text" name="status"  ng-model="form.status"/>
+		<input placeholder="categoria" class="input-global form-control" type="text" name="categoria"  ng-model="form.categoria"/>
+		
+		<a href="#" class="cadastrar btn btn-success input-global" ng-click="cadastrar()">cadastrar</a>
+	</div>
+</body>
+</html>

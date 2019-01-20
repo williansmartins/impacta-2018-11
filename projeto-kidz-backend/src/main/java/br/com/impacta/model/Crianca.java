@@ -1,11 +1,12 @@
 package br.com.impacta.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Crianca {
@@ -15,7 +16,7 @@ public class Crianca {
 	private Long id;
 	private Long user_id;
 	private String nome;
-	
+	@Temporal(TemporalType.DATE)
 	private Date nascimento;
 	private String sexo;
 	

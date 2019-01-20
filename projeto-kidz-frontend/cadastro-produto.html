@@ -11,7 +11,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script type="text/javascript" src="js/ngStorage.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/config.js"></script>
 	<script type="text/javascript" src="js/login-service.js"></script>
 	<script type="text/javascript" src="js/crianca-service.js"></script>
 	<script type="text/javascript" src="js/login-controller.js"></script>
@@ -21,12 +20,16 @@
 <body>
 	<div class="wrapper-content" ng-app="myApp" ng-controller="loginCtrl">
 		<img src="img/logotipo.png" title="logotipo-title" alt="logotipo-alt" />
-		<h3 class="login-titulo">Login</h3>
+		<h3 class="login-titulo">Cadastro</h3>
 		<i class="fas fa-igloo" style="font-size: 40px"></i>
-		<input placeholder="email" class="email input-global form-control" type="text" name="email" ng-model="form.username"/>
-		<input placeholder="senha" class="senha input-global form-control" type="password" name="senha"  ng-model="form.password"/>
-		<a href="#" class="entrar btn btn-primary input-global" ng-click="entrar()">entrar</a>
-		<br />
+		<input placeholder="titulo" class="input-global form-control" type="text" name="titulo" ng-model="form.titulo"/>
+		<input placeholder="descricao" class="input-global form-control" type="text" name="descricao"  ng-model="form.descricao"/>
+		<input placeholder="sexo" class="input-global form-control" type="text" name="sexo"  ng-model="form.sexo"/>
+		<input placeholder="cor" class="input-global form-control" type="text" name="cor"  ng-model="form.cor"/>
+		<input placeholder="tamanho" class="input-global form-control" type="text" name="tamanho"  ng-model="form.tamanho"/>
+		<input placeholder="status" class="input-global form-control" type="text" name="status"  ng-model="form.status"/>
+		<input placeholder="categoria" class="input-global form-control" type="text" name="categoria"  ng-model="form.categoria"/>
+		
 		<a href="#" class="cadastrar btn btn-success input-global" ng-click="cadastrar()">cadastrar</a>
 	</div>
 </body>

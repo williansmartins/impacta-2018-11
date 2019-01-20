@@ -16,6 +16,12 @@ body{
     margin: auto auto;
 }
 
+.wrapper-content_2 {
+    text-align: center;
+    width: 500px;
+    margin: auto auto;
+}
+
 .input-global{
 	width: 100%;
 	margin-bottom: 5px;

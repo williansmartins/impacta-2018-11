@@ -46,7 +46,7 @@ app.controller('loginCtrl', function($scope, $http, LoginService, $localStorage,
           }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
-            alert("Erro ao tentar fazer login.");
+            alert("Erro ao tentar fazer o cadastro.");
             console.info("error:");
             console.info(response);
         });

@@ -3,13 +3,14 @@ package br.com.impacta.model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 
 @Entity
 public class Crianca {
 	
 	@Id
+	@GeneratedValue
 	private Long id;
 	private Long user_id;
 	private String nome;
